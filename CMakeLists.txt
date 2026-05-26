@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 # --------------------------------------------------------------------------
 # Configurações de compilador (MSYS2 MinGW64)
 # --------------------------------------------------------------------------
+option(STATIC_EXE "Gera EXE portátil sem dependências externas" OFF)
+
 if(MINGW)
     add_compile_options(
         -Wall -Wextra -Wpedantic
@@ -15,9 +17,14 @@ if(MINGW)
         -ffast-math
         -msse2
     )
-    # Subsistema Windows para evitar janela de console no release
-    # Mantenha comentado durante debug para ver saída de stderr
-    # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mwindows")
+    if(STATIC_EXE)
+        # Link estático das runtimes MinGW + sem janela de console
+        add_link_options(
+            -static-libgcc
+            -static-libstdc++
+            -mwindows
+        )
+    endif()
 endif()
 
 # --------------------------------------------------------------------------
@@ -26,12 +33,20 @@ endif()
 # --------------------------------------------------------------------------
 set(RAYLIB_ROOT "C:/msys64/mingw64" CACHE PATH "Raiz do MinGW64 com Raylib")
 
-find_library(RAYLIB_LIB
-    NAMES raylib
-    PATHS "${RAYLIB_ROOT}/lib"
-    NO_DEFAULT_PATH
-    REQUIRED
-)
+if(STATIC_EXE)
+    # Força a lib estática (.a) em vez do import da DLL (.dll.a)
+    set(RAYLIB_LIB "${RAYLIB_ROOT}/lib/libraylib.a")
+    if(NOT EXISTS "${RAYLIB_LIB}")
+        message(FATAL_ERROR "libraylib.a não encontrado em ${RAYLIB_ROOT}/lib")
+    endif()
+else()
+    find_library(RAYLIB_LIB
+        NAMES raylib
+        PATHS "${RAYLIB_ROOT}/lib"
+        NO_DEFAULT_PATH
+        REQUIRED
+    )
+endif()
 
 find_path(RAYLIB_INCLUDE
     NAMES raylib.h
