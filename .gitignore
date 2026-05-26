@@ -1,0 +1,40 @@
+# Build
+build/
+*.exe
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.pdb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+_deps/
+
+# IDEs
+.vscode/
+.idea/
+*.user
+*.suo
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temporários
+*.log
+*.tmp
+
+# raygui (header-only, grande demais para o repo se vier de outra fonte)
+# raygui.h   # mantido pois está no projeto
