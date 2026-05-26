@@ -328,7 +328,7 @@ onde:
 
 ```bash
 # Clonar
-git clone https://github.com/SEU_USUARIO/smart_data_center.git
+git clone https://github.com/duarteHiago/smart_data_center.git
 cd smart_data_center
 
 # Configurar (detecta automaticamente o MinGW64 em C:/msys64/mingw64)
