@@ -23,26 +23,17 @@
 
 ## Demonstração
 
-> 📸 **Como adicionar:** execute o projeto, grave uma tela com [ScreenToGif](https://www.screentogif.com/)  
-> e salve como `assets/demo.gif`, depois referencie aqui com `![demo](assets/demo.gif)`.
+![Simulação em tempo real — 18 frames · 960×540](assets/demo.gif)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Cena 3D (Raylib OpenGL)        │  HUD lateral (raygui)     │
-│                                 │                            │
-│  Vista isométrica do            │  ● Status do sistema       │
-│  data center: 8 racks,          │  ● Temperatura por rack    │
-│  2 CRACs, partículas de         │  ● Narrativa do fuzzy      │
-│  fluxo de ar animadas,          │  ● Fan / PDU (barras)      │
-│  sinais Arduino→racks,          │  ● Log de eventos          │
-│  inspetor de objetos            │  ● Modo auto / manual      │
-│                                 │                            │
-│  ┌───────────────────────────┐  │                            │
-│  │  [?][N][A][C][H][F]       │  │                            │
-│  │  Botões de acesso rápido  │  │                            │
-│  └───────────────────────────┘  │                            │
-└─────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+
+| Vista Principal | Rede Neural MLP | Fuzzy vs Histerese |
+|:---:|:---:|:---:|
+| ![Vista principal](assets/01_main.png) | ![Rede Neural MLP](assets/02_neural.png) | ![Comparativo live](assets/03_compare.png) |
+| **Mapa de Calor 2D** | **ARM vs AVR** | **Falha CRAC** |
+| ![Mapa de calor IDW](assets/04_heatmap.png) | ![ARM vs AVR](assets/05_arm.png) | ![Falha CRAC ativa](assets/06_crac_fail.png) |
+
+</div>
 
 ---
 
