@@ -25,6 +25,8 @@
 
 ![Vista principal do simulador](assets/01_main.png)
 
+![Simulação em tempo real](assets/demo.gif)
+
 ---
 
 ## Sobre o Projeto
