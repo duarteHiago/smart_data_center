@@ -23,17 +23,7 @@
 
 ## Demonstração
 
-![Simulação em tempo real — 18 frames · 960×540](assets/demo.gif)
-
-<div align="center">
-
-| Vista Principal | Rede Neural MLP | Fuzzy vs Histerese |
-|:---:|:---:|:---:|
-| ![Vista principal](assets/01_main.png) | ![Rede Neural MLP](assets/02_neural.png) | ![Comparativo live](assets/03_compare.png) |
-| **Mapa de Calor 2D** | **ARM vs AVR** | **Falha CRAC** |
-| ![Mapa de calor IDW](assets/04_heatmap.png) | ![ARM vs AVR](assets/05_arm.png) | ![Falha CRAC ativa](assets/06_crac_fail.png) |
-
-</div>
+![Vista principal do simulador](assets/01_main.png)
 
 ---
 
